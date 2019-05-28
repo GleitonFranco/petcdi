@@ -1,0 +1,26 @@
+<md-toolbar layout="column" class="md-tall">
+
+    <div class="md-toolbar-tools">
+        <!--<div layout="row" flex="flex" class="fill-height">-->
+            <!--<div ng-hide="toggleSearch" class="md-toolbar-item md-breadcrumb">-->
+                <!--<span ng-click="toggleSearch = !toggleSearch">Angular Material Table</span>-->
+            <!--</div>-->
+            <!--<span flex="flex" ng-hide="toggleSearch"></span>-->
+            <!--<md-input-container flex="flex" style="padding-left:88px;" ng-show="toggleSearch">-->
+                <!--<input type="text" ng-model="search" aria-label="input"/>-->
+            <!--</md-input-container>-->
+            <!--<div layout="row" class="md-toolbar-item md-tools">-->
+                <!--<md-button ng-click="toggleSearch = !toggleSearch" class="md-icon-button md-primary md-default-theme" aria-label="Settings">-->
+                    <!--<md-icon md-svg-icon="img/icon/ic_search_black_24px.svg"></md-icon>-->
+                <!--</md-button>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+    <div class="main-fab">
+        <md-button class="md-fab md-accent">+</md-button>
+    </div>
+</md-toolbar>
+<md-content layout="column" flex="flex" ng-click="toggleSearch=false">
+    <md-table headers="headers" content="content" sortable="sortable" filters="search" custom-class="custom" thumbs="thumbs" count="count">
+    </md-table>
+</md-content>

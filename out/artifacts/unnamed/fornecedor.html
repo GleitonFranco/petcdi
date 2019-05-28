@@ -1,0 +1,10 @@
+<md-toolbar layout="column">
+    <div class="md-toolbar-tools">
+        <div layout="row" flex="flex" class="fill-height">
+        <span>Tabela de Fornecedores</span>
+        </div>
+    </div>
+</md-toolbar>
+<md-content layout="column" flex="flex" ng-click="toggleSearch=false">
+    <md-table-simplex entity="Fornecedor" headers="headers" sortable="sortable" filters="search" custom-class="custom" edit-function="editar" dele-function="excluir" new-function="novo" ></md-table-simplex>
+</md-content>

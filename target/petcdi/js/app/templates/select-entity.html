@@ -1,0 +1,5 @@
+<label>{{entity}}</label>
+<md-select ng-model="modelo" ng-model-options="{trackBy: '$value.id'}" required
+           md-on-open="loadFabricantes()" aria-label="selecione opção">
+  <md-option ng-repeat="i in itens" ng-value="i">{{ i[field] }}</md-option>
+</md-select>

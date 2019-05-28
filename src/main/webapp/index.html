@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="petsis" >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="pt-br" />
+    <title>Sistema Petsis 2</title>
+    <link rel="stylesheet" href="js/min/angular-material.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <!-- <base href="http://localhost:8080/petsis2-1.0-SNAPSHOT/"> -->
+</head>
+<body layout="row" flex ng-controller="IndexController">
+<md-sidenav
+  class="md-sidenav-left"
+  md-component-id="left"
+  md-is-locked-open="true"
+  md-whiteframe="4">
+
+    <md-toolbar class="md-whiteframe-z1">
+        <md-select ng-model="menuSelec" aria-label="Selecione">
+            <md-option ng-repeat="item in menu" ng-value="item">
+                {{item.nome}}
+            </md-option>
+        </md-select>
+    </md-toolbar>
+
+   <md-list layout="column">
+    <md-list-item ng-repeat="subitem in menuSelec.subitens">
+      <md-button ng-click="selecOpt(subitem)" href="{{subitem.link}}">
+        <md-icon md-svg-icon="img/icon/ic_pets_black_18px.svg"></md-icon>
+        {{subitem.nome}}
+      </md-button>
+    </md-list-item>
+  </md-list>
+</md-sidenav>
+
+<md-content flex ng-view></md-content>
+
+<script src="js/min/angular.min.js"></script>
+<!-- <script src="js/min/angular.min.js.map"></script> -->
+<script src="js/min/angular-route.min.js"></script>
+<!-- <script src="js/min/angular-route.min.js.map"></script> -->
+<script src="js/min/angular-resource.min.js"></script>
+<!-- <script src="js/min/angular-resource.min.js.map"></script> -->
+<script src="js/min/angular-animate.min.js"></script>
+<!-- <script src="js/min/angular-animate.min.map"></script> -->
+<script src="js/min/angular-aria.min.js"></script>
+<!-- <script src="js/min/angular-aria.min.js.map"></script> -->
+<script src="js/min/angular-messages.min.js"></script>
+<!-- <script src="js/min/angular-messages.min.js.map"></script> -->
+<!-- Angular Material Library -->
+<script src="js/min/ng-load.js"></script>
+<script src="js/min/angular-material.min.js"></script>
+<script src="js/min/jquery-3.1.1.min.js"></script>
+<script src="js/min/underscore-min.js"></script>
+
+<script src="js/app/app.js"></script>
+<script src="js/app/index.js"></script>
+<script src="js/app/produto.js"></script>
+<script src="js/app/fabricante.js"></script>
+<script src="js/app/fornecedor.js"></script>
+<script src="js/app/venda.js"></script>
+<script src="js/app/components/tableSimplex.js"></script>
+<script src="js/app/components/tableDetail.js"></script>
+<script src="js/app/components/selectEntity.js"></script>
+
+</body>
+</html>

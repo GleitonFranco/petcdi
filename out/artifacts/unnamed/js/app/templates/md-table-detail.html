@@ -1,0 +1,24 @@
+<table md-colresize="md-colresize" class="md-table">
+  <thead>
+    <tr class="md-table-headers-row">
+      <th ng-repeat="h in headers" class="md-table-header">
+        <span>{{h.name}}</span></th>
+      <th class="md-table-header"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="c in linhas track by $index" class="md-table-content-row">
+      <td ng-repeat="h in headers" ng-class="customClass[h.field]" class="md-table-content">
+        {{(h.field.indexOf('date') > 0) ? $filter('date')(c[h.field]) : c[h.field];}}
+      </td>
+      <td class="md-table-content">
+        <md-button ng-click="excluir($index)" class="md-icon-button md-primary" aria-label="Excluir">
+          <md-icon md-svg-icon="img/icon/ic_delete_black_9px.svg"></md-icon>
+        </md-button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div layout="row" class="md-table-footer">
+
+</div>
